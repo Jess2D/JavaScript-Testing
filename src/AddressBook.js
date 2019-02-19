@@ -14,3 +14,14 @@ AdressBook.prototype.getContact = function(index){
 AdressBook.prototype.deleteContact = function(index){
     this.contacts.splice(index,1);
 }
+
+AdressBook.prototype.getInitialContacts = function(cb){
+    var self = this;
+    setTimeout(function(){
+        self.initialComplete = true;
+        if(cb){
+            return cb();
+        }
+    }, 3);
+
+}
